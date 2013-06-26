@@ -21,10 +21,24 @@
       <%}%>-->
       <ul>
       	<li ng-repeat="pet in pets">
-		      {{pet.name}}
-		      <p>{{pet.breed}}</p>
+		      <p>
+		      	<label>Name: </label>
+		      	<input ng-model="pet.name" value="{{pet.name}}">:
+		      	<label>Breed: </label>
+		      	<input ng-model="pet.breed" value="{{pet.breed}}">
+		      	<a class="btn" ng-click="editPet(pet)">Save</a>
+		      	<a class="btn" ng-click="removePet(pet)">Remove</a>
+		      </p>
 		    </li>
       </ul>
+      <form>
+      	<h2>Add a new pet:</h2>
+      	<label>Name: </label>
+      	<input name="newPet_name" ng-model="newPet.name">
+      	<label>Breed: </label>
+      	<input name="newPet_breed" ng-model="newPet.breed">
+      	<input type="submit" ng-click="addPet(newPet)">
+      </form>
     </section>
   </div>
 </div>
