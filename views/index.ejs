@@ -1,14 +1,11 @@
 <% page = { 'title' : 'PAGE_TITLE', 'key': 'INDEX_PAGE_NAME'} %>
 <% assets = { 'css' : [], 'js' : [] } %>
-<div id="main" class="experiments">
-  <div class="no-layout">
-    <h1 class="font21 serif"><%- t('welcome_title')%></h1>
-    <section class="basic">
-      <p>
-        <%- t('welcome_message')%> <img src="<%= img('icon/arrow_left_white_11x11.png') %>" alt="">
-      </p>
 
-      <a href="hello" class="btn btn-water"><%- t('hello_link')%></a>
-    </section>
-  </div>
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <h1 class="font21 serif"><%- t('welcome_title')%></h1>
+  <p><%- t('welcome_message')%></p>
+  <p>   
+    <a class="btn btn-large btn-primary" href="/hello">Frontier Apprentice Badge &raquo;</a>
+  </p>
 </div>
