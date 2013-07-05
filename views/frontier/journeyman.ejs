@@ -1,0 +1,42 @@
+<% page = {
+	'title' : 'Frontier Journeyman',
+	'key': 'Frontier Journeyman!!!'
+} %>
+<% assets = {
+	'css' : [ 'ui.css',
+					  'frontier/journeyman.css' ],
+	'js' : 	[ 'frontier/journeyman.js' ]
+} %>
+
+<div ng-app id="main" ng-controller="FrontierJourneymanCtrl">
+  <header>
+	  <h1><%- i18n('page_title')%></h1>
+	  <p><%- i18n('page_message')%></p>
+		<!-- Button to trigger modal -->
+		<a href="#task-modal" role="button" class="btn" data-toggle="modal"><%- i18n('see_tasks') %></a>
+  </header>
+  <article>
+  	<section>
+  	<p><%- i18n('international_greeting') %></p>
+  	</section>
+  </article>
+</div>
+
+<!-- Modal -->
+<div id="task-modal" class="modal modal-content fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Tasks:</h3>
+  </div>
+  <div class="modal-body">
+    <ul>
+			<li><label>Async Programming:</label> Using the "full parallel" control flow pattern, make three simultaneous calls to an api service.</li>
+			<li><label>Experiments:</label> Create a feature and wrap it into an experiment.</li>
+			<li><label>Localizations:</label> Localize your page(s) by creating a language specific file, moving your strings into it, and adding calls to your page that substitute in the localized strings.</li>
+			<li><label>Angular Directives:</label> Build a simple directive for a new HTML tag called "the-time" that displays the current time; "The time is: xxxx". Use a separate template file.</li>
+		</ul>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>

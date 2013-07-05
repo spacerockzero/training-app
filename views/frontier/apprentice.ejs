@@ -1,0 +1,44 @@
+<% page = {
+	'title' : 'HELLO WORLD',
+	'key': 'HELLO WORLD!!!'
+} %>
+<% assets = {
+	'css' : ['hello.css'],
+	'js' : ['petController.js']
+} %>
+
+<div ng-app id="main" class="experiments" ng-controller="PetListCtrl">
+  <div class="no-layout">
+    <h1 class="font21 serif"><%- i18n('hello_title')%></h1>
+    <section class="basic">
+      <p>
+        <%- i18n('hello_message')%> <img src="<%= img('icon/arrow_left_white_11x11.png') %>" alt="">
+      </p>
+      <p>Person: <%= person.name %>, Title: <%= person.title %>, Weapon of choice: <%= person.weapon %></p>
+      <h2>Pets:</h2>
+      <!--<% for (var i=0;i<pets.length;i++){%>
+      	<p>Name: <%= pets[i].name %>, Breed: <%= pets[i].breed %></p>
+      <%}%>-->
+      <ul>
+      	<li ng-repeat="pet in pets">
+		      <p>
+		      	<label>Name: </label>
+		      	<input ng-model="pet.name" value="{{pet.name}}">:
+		      	<label>Breed: </label>
+		      	<input ng-model="pet.breed" value="{{pet.breed}}">
+		      	<a class="btn" ng-click="editPet(pet)">Save</a>
+		      	<a class="btn" ng-click="removePet(pet)">Remove</a>
+		      </p>
+		    </li>
+      </ul>
+      <form>
+      	<h2>Add a new pet:</h2>
+      	<label>Name: </label>
+      	<input name="newPet_name" ng-model="newPet.name">
+      	<label>Breed: </label>
+      	<input name="newPet_breed" ng-model="newPet.breed">
+      	<input type="submit" ng-click="addPet(newPet)">
+      </form>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+/* training app theme global rules */
+html {
+	font-family: helvetica, arial, sans-serif;
+}
+#main {
+	padding: 10px;
+}
+/* Bootstrap 3.0 overrides */
+/*.modal div {
+	background:white;
+}*/
