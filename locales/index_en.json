@@ -1,6 +1,6 @@
 {
-	"welcome_title": "Welcome to Jakob Anderson's training portfolio",
-	"welcome_message": "Welcome to Jakob Anderson's training page",
-  "sample_link": "View a sample page",
-  "hello_link": "View an angular hello/pets page"
+	"welcome_title": "Jakob Anderson's training portfolio",
+	"badges_attained": "Badges attained",
+	"badges_in_progress": "In progress",
+	"badges_ready_to_grade": "Ready to grade"
 }

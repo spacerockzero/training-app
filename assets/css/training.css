@@ -1,9 +1,9 @@
 /* training app theme global rules */
-html {
-	font-family: helvetica, arial, sans-serif;
-}
 #main {
 	padding: 10px;
+}
+.btn-tasks {
+	float:right;
 }
 /* Bootstrap 3.0 overrides */
 /*.modal div {

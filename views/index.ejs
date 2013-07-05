@@ -1,11 +1,19 @@
 <% page = { 'title' : 'PAGE_TITLE', 'key': 'INDEX_PAGE_NAME'} %>
-<% assets = { 'css' : [], 'js' : [] } %>
+<% assets = { 'css' : ['index/index.css'], 'js' : [] } %>
 
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
   <h1 class="font21 serif"><%- t('welcome_title')%></h1>
-  <p><%- t('welcome_message')%></p>
-  <p>   
-    <a class="btn btn-large btn-primary" href="/hello">Frontier Apprentice Badge &raquo;</a>
-  </p>
+  <hr/>
+  <section>
+
+  	<label><%- i18n('badges_ready_to_grade') %>:</label>
+	  <a class="btn btn-danger" href="/frontier/apprentice">Frontier Apprentice Badge &raquo;</a >
+
+  	<label><%- i18n('badges_in_progress') %>:</label>
+	  <a class="btn btn-warning" href="/frontier/journeyman">Frontier Journeyman Badge &raquo;</a >
+
+	  <label><%- i18n('badges_attained') %>:</label>
+	  <a class="btn btn-primary" href="/frontier/apprentice">Frontier Apprentice Badge &raquo;</a >
+  </section>
 </div>

@@ -1,44 +1,74 @@
 <% page = {
-	'title' : 'HELLO WORLD',
-	'key': 'HELLO WORLD!!!'
+	'title' : 'Frontier Apprentice',
+	'key': 'Frontier Apprentice'
 } %>
 <% assets = {
-	'css' : ['hello.css'],
+	'css' : ['frontier/apprentice.css'],
 	'js' : ['petController.js']
 } %>
 
 <div ng-app id="main" class="experiments" ng-controller="PetListCtrl">
   <div class="no-layout">
-    <h1 class="font21 serif"><%- i18n('hello_title')%></h1>
-    <section class="basic">
-      <p>
-        <%- i18n('hello_message')%> <img src="<%= img('icon/arrow_left_white_11x11.png') %>" alt="">
-      </p>
-      <p>Person: <%= person.name %>, Title: <%= person.title %>, Weapon of choice: <%= person.weapon %></p>
+    <h1 class="with-tasks"><%- i18n('hello_title')%>
+	    <!-- Button to trigger modal -->
+			<button href="#task-modal" role="button" class="btn-tasks btn btn-primary btn-small" data-toggle="modal"><%- i18n('see_tasks') %></button>
+		</h1>
+		<hr/>
+
+    <section>
       <h2>Pets:</h2>
-      <!--<% for (var i=0;i<pets.length;i++){%>
-      	<p>Name: <%= pets[i].name %>, Breed: <%= pets[i].breed %></p>
-      <%}%>-->
-      <ul>
-      	<li ng-repeat="pet in pets">
-		      <p>
-		      	<label>Name: </label>
-		      	<input ng-model="pet.name" value="{{pet.name}}">:
-		      	<label>Breed: </label>
-		      	<input ng-model="pet.breed" value="{{pet.breed}}">
-		      	<a class="btn" ng-click="editPet(pet)">Save</a>
-		      	<a class="btn" ng-click="removePet(pet)">Remove</a>
-		      </p>
-		    </li>
-      </ul>
-      <form>
-      	<h2>Add a new pet:</h2>
-      	<label>Name: </label>
-      	<input name="newPet_name" ng-model="newPet.name">
-      	<label>Breed: </label>
-      	<input name="newPet_breed" ng-model="newPet.breed">
-      	<input type="submit" ng-click="addPet(newPet)">
-      </form>
+      <div class="row">
+	    	<article class="pet col-lg-4" ng-repeat="pet in pets">
+	      	<p ng-model="pet.name">Name: {{pet.name}}</p>
+	      	<p ng-model="pet.breed">Breed: {{pet.breed}}</p>
+	      	<button class="btn btn-danger align-right" ng-click="removePet(pet)">Remove</button>
+		    </article>
+	    </div>
+
+			<h2>Add a new pet:</h2>
+	    <div class="jumbotron row">
+      	<div class="control-group col-lg-4" for="newPet_name">
+	      	<div class="controls">
+		      	<input id="newPet_name" ng-model="newPet.name" placeholder="name">
+	      	</div>
+      	</div>
+      	<div class="control-group col-lg-4">
+	      	<div class="controls">
+		      	<input id="newPet_breed" ng-model="newPet.breed" placeholder="breed">
+		      	<button class="btn btn-primary" type="submit" ng-click="addPet(newPet)">Submit</button>
+	      	</div>
+      	</div>
+      </div>
     </section>
+
+    <section class="jumbotron">
+      <h2>Data from controller route:</h2>
+      <p>Person: <%= person.name %>, Title: <%= person.title %>, Weapon of choice: <%= person.weapon %></p>
+    </section>
+
   </div>
+</div>
+
+<!-- Modal -->
+<div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-content">
+	  <div class="modal-header">
+	    <button type="button" class="btn close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">Tasks:</h3>
+	  </div>
+	  <div class="modal-body">
+	    <ul>
+				<li><i class="glyphicon glyphicon-ok btn btn-small btn-success"></i> Build a simple "Hello World" web app in the Frontier web stack.
+				<li><i class="glyphicon glyphicon-ok btn btn-small btn-success"></i> Check the application into your own GitHub repository.  If you allow it to be public, then there is no charge.</li>
+				<li><i class="glyphicon glyphicon-ok btn btn-small btn-success"></i> Deploy your app outside of your local development environment.</li>
+				<li><i class="glyphicon glyphicon-ok btn btn-small btn-success"></i> Enhance your application by adding content to your page and learn how to pass data to your EJS page.</li>
+				<li><i class="glyphicon glyphicon-ok btn btn-small btn-success"></i> Add more pages.  Wire them to different routes and/or separate controllers.</li>
+				<li><i class="glyphicon glyphicon-ok btn btn-small btn-success"></i> Learn how to configure a different header.  Here is a skeletal header with just the bare bones elements: mylayout.ejs</li>
+				<li><i class="glyphicon glyphicon-ok btn btn-small btn-success"></i> Using Angular, create a simple list of items.  You should be able to view the list and add/edit/delete items.</li>
+			</ul>
+	  </div>
+	  <div class="modal-footer">
+	    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+	  </div>
+	  </div>
 </div>

@@ -1,8 +1,9 @@
 {
-    "groups": {
-        "devs": ["stephen.lynn"]
-    },
-    "experiments": {
-        "featureOne": "devs"
-    }
+  "groups": {
+      "devs": ["jakobjosiahanderson"]
+  },
+  "experiments": {
+      "featureOne": "devs",
+      "internationalGreeting": false
+  }
 }

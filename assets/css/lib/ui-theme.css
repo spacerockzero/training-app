@@ -1,0 +1,24 @@
+/* Jakob Anderson's custom theme for Bootstrap 3.0 */
+html * {
+	font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+}
+hr {
+	border-top: 1px solid #dedede;
+}
+.navbar {
+	background-color: #212121;
+}
+.navbar-nav > li > a {
+	color:#ccc;
+	font-weight: 100;
+}
+.navbar-nav > li > a:hover {
+	color: #428bca;
+}
+.navbar-brand {
+	color: #d9534f;
+	font-weight: 100;
+}
