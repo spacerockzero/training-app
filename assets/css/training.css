@@ -7,11 +7,11 @@
 }
 
 .masonry,.masonry .masonry-brick {
-  -webkit-transition-duration:.7s;
-  -moz-transition-duration:.7s;
-  -ms-transition-duration:.7s;
-  -o-transition-duration:.7s;
-  transition-duration:.7s
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms
 }
 
 .masonry {
@@ -20,6 +20,11 @@
   -ms-transition-property:height,width;
   -o-transition-property:height,width;
   transition-property:height,width
+  -webkit-transition-easing: ease-in;
+  -moz-transition-easing: ease-in;
+  -ms-transition-easing: ease-in;
+  -o-transition-easing: ease-in;
+  transition-easing: ease-in
 }
 
 .masonry .masonry-brick {

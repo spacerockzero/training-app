@@ -1,9 +1,16 @@
 /* Jakob Anderson's custom theme for Bootstrap 3.0 */
 html * {
-	font-family: 'Open Sans', sans-serif;
+	/*font-family: 'Open Sans', sans-serif;*/
+	letter-spacing: 0.07em;
 }
 h1, h2, h3, h4, h5, h6 {
+	letter-spacing: 0.05em;
+}
+h1, h2 {
 	font-weight: 100;
+}
+h3, h4, h5, h6 {
+	font-weight: 200;
 }
 hr {
 	border-top: 1px solid #dedede;
@@ -13,7 +20,7 @@ hr {
 }
 .navbar-nav > li > a {
 	color:#ccc;
-	font-weight: 100;
+	font-weight: 200;
 }
 .navbar-nav > li > a:hover {
 	color: #428bca;
@@ -21,6 +28,7 @@ hr {
 .navbar-brand {
 	color: #d9534f;
 	font-weight: 100;
+	font-size: 150%;
 }
 .navbar .brand {
 	float: left;
@@ -89,4 +97,7 @@ hr {
 .navbar .nav>li {
 	display: block;
 	float: left;
+}
+.modal li {
+	margin-bottom:1em;
 }
