@@ -5,6 +5,34 @@
 .btn-tasks {
 	float:right;
 }
+
+.masonry,.masonry .masonry-brick {
+  -webkit-transition-duration:.7s;
+  -moz-transition-duration:.7s;
+  -ms-transition-duration:.7s;
+  -o-transition-duration:.7s;
+  transition-duration:.7s
+}
+
+.masonry {
+  -webkit-transition-property:height,width;
+  -moz-transition-property:height,width;
+  -ms-transition-property:height,width;
+  -o-transition-property:height,width;
+  transition-property:height,width
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property:left,right,top;
+  -moz-transition-property:left,right,top;
+  -ms-transition-property:left,right,top;
+  -o-transition-property:left,right,top;
+  transition-property:left,right,top
+}
+
+.masonry-align {
+  margin:auto auto 0 55px
+}
 /* Bootstrap 3.0 overrides */
 /*.modal div {
 	background:white;

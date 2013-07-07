@@ -1,0 +1,26 @@
+.tab-content .tab-pane{
+	padding: 25px;
+	background: #f9f9f9;
+}
+
+/* Control Flow example (flickr images)*/
+.box {
+	display:inline-block;
+	vertical-align: top;
+	width:180px;
+	margin:0 35px 35px 0;
+	padding:10px;
+	background:#fff;
+	box-shadow:0 0 10px 0 rgba(0,0,0,0.5);
+}
+.photo-item {}
+.author-name {
+	background: #000;
+	color:#ccc;
+	text-align: center;
+	line-height:1.5em;
+	font-weight: 100;
+}
+.photo-item img {
+	width:100%;
+}

@@ -22,7 +22,7 @@
       <script src="https://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
       <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+  <script src="http://192.168.1.200:35729/livereload.js?snipver=1"></script>
   <%- js('jquery-1.8.2.min.js') %>
   <%- js('inject_0.4.0_a.js') %>
   <%- js('angular-1.0.3.js') %>
@@ -34,31 +34,35 @@
 
 	<!-- Fixed navbar -->
   <div class="navbar navbar-fixed-top">
-    <div class="container">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Training Portfolio</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/">Home</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Skill Badges<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li class="nav-header">Frontier Skills</li>
-              <li><a href="/frontier/apprentice">Apprentice</a></li>
-              <li><a href="/frontier/journeyman">Journeyman (coming soon)</a></li>
-              <li><a href="/frontier/master">Master (coming later)</a></li>
-              <!-- <li class="divider"></li>
-              <li class="nav-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li> -->
-            </ul>
-          </li>
-        </ul>
-      </div> <!-- /.nav-collapse -->
+  	<div class="navbar-inner">
+	    <div class="container">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">Training Portfolio</a>
+	      <div class="nav-collapse collapse">
+	        <ul class="nav navbar-nav">
+	        	<li class="divider-vertical"></li>
+	          <li><a href="/">Home</a></li>
+	          <li class="divider-vertical"></li>
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Skill Badges<b class="caret"></b></a>
+	            <ul class="dropdown-menu">
+	              <li class="nav-header">Frontier Skills</li>
+	              <li><a href="/frontier/apprentice">Apprentice</a></li>
+	              <li><a href="/frontier/journeyman">Journeyman (coming soon)</a></li>
+	              <li><a href="/frontier/master">Master (coming later)</a></li>
+	              <!-- <li class="divider"></li>
+	              <li class="nav-header">Nav header</li>
+	              <li><a href="#">Separated link</a></li>
+	              <li><a href="#">One more separated link</a></li> -->
+	            </ul>
+	          </li>
+	        </ul>
+	      </div> <!-- /.nav-collapse -->
+	    </div>
     </div>
   </div>
 
@@ -78,6 +82,53 @@
 	    <% } %>
 	  <% } %>
   </div><!-- /.container -->
+  <% if(deployedInProd()) { %>
+	  <%- js('clientManifest.js') %>
+	<% } %>
+
+	<script type="text/javascript">
+	  <% if(deployedInProd()) { %>
+	    Inject.setModuleRoot("<%= cdn('/js/modules') %>");
+
+	    function loadCSS(path) {
+	      return FS.File.loadCSS(path);
+	    }
+
+	    <% if( cdn('/').length > 1 ) { %>
+	      Inject.setCrossDomain({
+	        relayFile: "<%= cdn('/inject_relay_0.4.0a.20130130.html') %>",
+	        relaySwf: "<%= cdn('/inject_relay_0.4.0a.20130130.swf') %>"
+	      });
+	    <% } %>
+
+	  <% } else { %>
+
+	    Inject.setModuleRoot("/js/modules");
+	    Inject.clearCache();
+
+	    function loadCSS(path) {
+	      return FS.File.loadCSS(path);
+	    }
+
+	  <% } %>
+
+	  <% /* Manifest should be used in production mode for resolving hashed module names */ %>
+	  if(window.manifest) {
+	    if(window.debugOn) {
+	      console.log("Need to change manifest over to debug versions");
+	      for(var k in manifest.js){
+	        manifest.js[k] = manifest.js[k].replace(".js", "_raw.js");
+	      }
+	    }
+	    Inject.manifest(manifest.js);
+	  }
+	  console.log("Controls have been configured");
+
+	  $(document).ready(function() {
+	    /** any reason this had to be document.body before? **/
+	    FS.Controls.init(document);
+	  });
+	</script>
 </body>
 </html>
 
