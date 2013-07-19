@@ -29,6 +29,11 @@ module.exports = function(app) {
 
     });
   });
+  app.get('/frontier/journeyman-angular', function(req, res){
+    res.render("frontier/angular-demo", {
+
+    });
+  });
 
   app.get('/', function(req, res){
     res.render("index", {});

@@ -5,13 +5,12 @@
 <%- include ../partials/globaljs %>
 <% assets = {
 	'css' : [ 'frontier/journeyman.css' ],
-	'js' : 	[ 'frontier/TheTime.js',
+	'js' : 	[ 'modules/TheTime.js',
 						'frontier/journeyman.js',
 						'frontier/fullParallel.js' ]
 } %>
 
-<!-- <div id="main" ng-controller="FrontierJourneymanCtrl"> -->
-<div id="main">
+<div id="main" ng-controller="FrontierJourneymanCtrl">
   <header>
 	  <h1><%- i18n('page_title')%>
 		  <!-- Button to trigger modal -->
@@ -46,49 +45,18 @@
 	  	<span class="badge">Note:</span> Experiments aren't currently working in this training app, but everything is there, just like when it works in a normal app
 	  </article>
 
-
-
-
-
-
-
-
-
-
-
 		<!-- Angular Requirement -->
-		<!-- <article id="angular-directive" class="tab-pane fade" ng-app="time"> -->
-		<article id="angular-directive" class="tab-pane fade"
-						 ng-app="" >
+		<article id="angular-directive" class="tab-pane fade" ng-app="time">
 			<header>
 				<h3>Angular Directive Example</h3>
 			</header>
-			<section class="jumbotron"
-							 ng-controller="SimpleController">
-
-	    	<div >
-	    		Name:
-	    		<br/>
-	    		<input type="text" ng-model="name" />
-	    		<ul>
-	    			<li ng-repeat="cust in customers | filter:name | orderBy: 'city'">
-	    			{{ cust.name | uppercase }} - {{ cust.city | lowercase }}</li>
-	    		</ul>
+			<section class="jumbotron">
+				<div ng-controller="Ctrl2">
+		      Date format: <input ng-model="format"> <hr/>
+		      Current time is: <span my-current-time="format"></span>
 	    	</div>
-
-
 			</section>
 		</article>
-
-
-
-
-
-
-
-
-
-
 
 		<!-- Flow Control Requirement -->
 		<article id="flow-control" class="tab-pane fade">
