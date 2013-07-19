@@ -1,8 +1,8 @@
 module.exports = function(app) {
 
-  // app.set('view options', {
-  // 	layout: 'layouts/my-layout'
-  // });
+  app.set('view options', {
+  	layout: 'layouts/my-layout'
+  });
 
   app.get('/frontier/apprentice', function(req, res){
     res.render("frontier/apprentice", {
