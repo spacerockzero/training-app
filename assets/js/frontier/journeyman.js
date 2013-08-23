@@ -1,4 +1,4 @@
-$('#myTab a').eq(1).tab('show'); // Select first tab
+$('#myTab a').eq(2).tab('show'); // Select first tab
 
 $('#myTab a').click(function (e) {
   e.preventDefault();

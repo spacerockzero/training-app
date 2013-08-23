@@ -1,18 +1,9 @@
+var demoApp = angular.module('demoApp', [])
 
 
-
-
-
-
-
-
-
-
-var demoApp = angular.module('demoApp', []);
-
-demoApp.config( function( $routeProvider ){
+.config( function( $routeProvider ){
 	$routeProvider
-		.when('/view1',
+		.when('/',
 		  {
 		  	controller: 'SimpleController',
 		  	template: '<div class="container">\
@@ -60,10 +51,8 @@ demoApp.config( function( $routeProvider ){
 });
 
 
-var controllers = {};
-
-controllers.SimpleController = function( $scope ) {
-	$scope.customers = [
+demoApp.factory('simpleFactory', function(){
+	var customers = [
 		{ name: 'John Smith', city: 'Phoenix' },
 		{ name: 'Sven Heimer', city: 'Asgaard' },
 		{ name: 'Jens Lekman', city: 'Voltron' },
@@ -71,6 +60,31 @@ controllers.SimpleController = function( $scope ) {
 		{ name: 'Aarkandon Onandon', city: 'Bickspacefal' },
 		{ name: 'Gerschwinn Humblemattr', city: 'Glasgow' }
 	];
+
+	var factory = {};
+
+	factory.getCustomers = function(){
+		return customers;
+	};
+
+	factory.postCustomer = function(){
+
+	};
+
+	return factory;
+
+});
+
+
+demoApp.controller('SimpleController', function( $scope, simpleFactory ) {
+	$scope.customers = [];
+
+	init();
+
+	function init(){
+		$scope.customers = simpleFactory.getCustomers();
+	}
+
 	$scope.addCustomer = function(){
 		$scope.customers.push(
 		  {
@@ -78,6 +92,5 @@ controllers.SimpleController = function( $scope ) {
 		  	city: $scope.newCustomer.city
 		  });
 	}
-};
 
-demoApp.controller( controllers );
+});
