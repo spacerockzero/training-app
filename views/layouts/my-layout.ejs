@@ -4,7 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= page.title %> &#8212; Skills</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600' rel='stylesheet' type='text/css'>
-  <%- css('lib/bootstrap-comp.css') %>
+ 	<%- css('lib/bs3/bootstrap.min.css') %>
+  <%- css('lib/bs3/bootstrap-theme.min.css') %>
   <%- css('lib/bootstrap-glyphicons.css') %>
   <%- css('lib/ui-theme.css') %>
   <%- css('training.css') %>
@@ -78,7 +79,7 @@
 	    <% } %>
 	  <% } %>
   </div><!-- /.container -->
-
+  <%- include ../partials/globaljs %>
   <%- include ./partials/inject %>
 
 </body>

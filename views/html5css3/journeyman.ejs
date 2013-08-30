@@ -1,0 +1,140 @@
+<% page = {
+	'title' : 'Frontier Journeyman',
+	'key': 'Frontier Journeyman!!!'
+} %>
+<%- include ../partials/globaljs %>
+<% assets = {
+	'css' : [ 'frontier/journeyman.css' ],
+	'js' : 	[ 'frontier/TheTime.js',
+						'frontier/journeyman.js',
+						'frontier/fullParallel.js' ]
+} %>
+
+<div id="main" ng-controller="FrontierJourneymanCtrl">
+  <header>
+	  <h1><%- i18n('page_title')%>
+		  <!-- Button to trigger modal -->
+			<button href="#task-modal" role="button" class="pull-right btn btn-primary" data-toggle="modal"><%- i18n('see_tasks') %></button>
+		</h1>
+		<hr/>
+  </header>
+
+	<!-- bootstrap tab nav -->
+	<ul class="nav nav-tabs" id="myTab">
+	  <li >
+	  		<a href="#experiment-i18n">Experiment, i18n</a>
+	  </li>
+	  <li><a href="#angular-directive">Angular Directive</a></li>
+	  <li><a href="#flow-control">Flow Control</a></li>
+	</ul>
+
+	<!-- bootstrap tab content -->
+	<div class="tab-content">
+
+	  <!-- Experiment, i18n Requirements -->
+	  <!-- experiments currently don't work in test app, for some reason... -->
+	  <article id="experiment-i18n" class="tab-pane fade">
+	  	<header>
+		  	<h3>i18n phrase inside experiment below:</h3>
+	  	</header>
+	  	<section class="well">
+	  	<% if (feature('internationalGreeting')){ %>
+	  	<p><%- i18n('international_greeting') %></p>
+	  	<% } %>
+	  	</section>
+	  	<span class="badge">Note:</span> Experiments aren't currently working in this training app, but everything is there, just like when it works in a normal app
+	  </article>
+
+		<!-- Angular Requirement -->
+		<article id="angular-directive" class="tab-pane fade" ng-app="time">
+			<header>
+				<h3>Angular Directive Example</h3>
+			</header>
+			<section class="jumbotron">
+				<div ng-controller="Ctrl2">
+		      Date format: <input ng-model="format"> <hr/>
+		      Current time is: <span my-current-time="format"></span>
+	    	</div>
+			</section>
+		</article>
+
+		<!-- Flow Control Requirement -->
+		<article id="flow-control" class="tab-pane fade">
+			<header>
+				<h3>Flow Control Example
+				<!-- Button to trigger modal -->
+				<button href="#flow-task-modal" role="button" class="pull-right btn btn-success" data-toggle="modal">What's going on behind the curtains?</button></h3>
+			</header>
+			<hr/>
+			<section id="container" data-control="Masonry" data-config='{"override":true}'></section>
+		</article>
+
+	</div>
+
+</div>
+
+
+<!-- Modals outside of content area, to avoid style inheritance and z-index issues -->
+<!-- Task Modal -->
+<div id="task-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Tasks:</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+		    	<li>
+		    		<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
+		    		<label>Async Programming:</label>
+		    		Using the "full parallel" control flow pattern, make three simultaneous calls to an api service.
+		    	</li>
+					<li>
+						<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
+						<label>Experiments:</label>
+						Create a feature and wrap it into an experiment.
+						<span class="badge">Note:</span> Experiments aren't currently working in this training app, but everything is there, just like when it works in a normal app</li>
+					<li>
+						<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
+						<label>Localizations:</label>
+						Localize your page(s) by creating a language specific file, moving your strings into it, and adding calls to your page that substitute in the localized strings.
+						<span class="badge">Note:</span> A few newer strings are not yet localized
+					</li>
+					<li>
+						<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
+						<label>Angular Directives:</label>
+						Build a simple directive for a new HTML tag called "the-time" that displays the current time; "The time is: xxxx". Use a separate template file.
+						<!-- <span class="badge">Note:</span> Needs to have separate html template file --></li>
+				</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Flow Task Modal -->
+<div id="flow-task-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">What's going on behind the curtains?</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+		    	<li>I make 6 full-parallel async ajax calls to a flickr API, to get the recent public photos for 6 different users I found with interesting photos. </li>
+					<li>These user IDs are taken from an array, and passed into the async ajax function as arguments each time it runs</li>
+					<li>I then build the html for all photos before appending the entire set in one clean operation to the DOM, rather than a ton of noisy, laggy operations inside a loop</li>
+					<li>I then trigger an event in the final content chain callback that the content has loaded. I use this to trigger Masonry to reload and shift the content into a nice mosaic arrangement</li>
+					<li>Check out the XHR requests in your browser dev tools, or refresh a few times to see the image gallery order change. The random-ish order is a side-effect of the full-parallel async nature of the ajax requests I made in this demo.</li>
+				</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,114 @@
+<% page = {
+	'title' : 'Frontier Apprentice',
+	'key': 'Frontier Apprentice'
+} %>
+
+
+
+<% assets = {
+	'css' : ['html5css3/apprentice.css'],
+	'js' : []
+} %>
+
+<div ng-app id="main" >
+  <div class="no-layout">
+    <h1 class="with-tasks">HTML5/CSS3 Apprentice
+	    <!-- Button to trigger modal -->
+			<button href="#task-modal" role="button" class="btn-tasks btn btn-primary btn-small" data-toggle="modal">See tasks</button>
+		</h1>
+		<hr/>
+
+    <section>
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="articles row">
+        <article class="col-lg-4 clearfix">
+          <img class="image-feature" src="<%- img('photos/jakobThumb200Square.jpg') %>" width="200" >
+          <h2>Not if I weaken first.</h2>
+          <p>They were just sucked into space. The unexpected is our normal routine. How long can two people talk about nothing? Well, I'll say this for him - he's sure of himself. Yes, absolutely, I do indeed concur, wholeheartedly! Wouldn't that bring about chaos? I will obey your orders. I will serve this ship as First Officer. And in an attack against the Enterprise, I will die with this crew. But I will not break my oath of loyalty to Starfleet. I guess it's better to be lucky than good. The game's not big enough unless it scares you a little. Not if I weaken first. and attack the Romulans. You did exactly what you had to do. You considered all your options, you tried every alternative and then you made the hard choice.</p>
+          <a class="action-target btn btn-primary" href="#">View details »</a>
+        </article><!-- /.col-lg-4 -->
+        <article class="col-lg-4 clearfix">
+          <img class="image-feature "src="<%- img('photos/jakobThumb200Square.jpg') %>" width="200" >
+          <h2>Your head is not an artifact!</h2>
+          <p>Fear is the true enemy, the only enemy. Worf, It's better than music. It's jazz. I recommend you don't fire until you're within 40,000 kilometers. Your head is not an artifact! When has justice ever been as simple as a rule book? You enjoyed that. Travel time to the nearest starbase? Captain, why are we out here chasing comets? Earl Grey tea, watercress sandwiches... and Bularian canapés? Are you up for promotion?</p>
+          <a class="action-target btn btn-primary" href="#">View details »</a>
+        </article><!-- /.col-lg-4 -->
+        <article class="col-lg-4 clearfix">
+          <img class="image-feature" src="<%- img('photos/jakobThumb200Square.jpg') %>"  width="200" >
+          <h2>Travel time to the nearest starbase?</h2>
+          <p>Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. Mr. Worf, you do remember how to fire phasers? In all trust, there is the possibility for betrayal. I think you've let your personal feelings cloud your judgement. Sure. You'd be surprised how far a hug goes with Geordi, or Worf. What's a knock-out like you doing in a computer-generated gin joint like this?</p>
+          <a class="action-target btn btn-primary" href="#">View details »</a>
+        </article><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider clearfix">
+
+      <div class="row featurette clearfix">
+        <div class="image-wrapper col-md-5 pull-right">
+          <img class="featurette-image img-responsive" src="<%- img('photos/cityscape_500Square.jpg') %>" data-src="holder.js/500x500/auto" alt="Cityscape">
+        </div>
+        <div class="col-md-7 pull-left">
+          <h2 class="featurette-heading">The unexpected is our normal routine. <span class="text-muted">But of course.</span></h2>
+          <p class="lead">Then maybe you should consider this: if anything happens to them, Starfleet is going to want a full investigation. Flair is what marks the difference between artistry and mere competence. Mr. Crusher, ready a collision course with the Borg ship. I suggest you drop it, Mr. Data. Could someone survive inside a transporter buffer for 75 years? Computer, belay that order.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette clearfix">
+        <div class="image-wrapper col-md-5 pull-left">
+          <img class="featurette-image img-responsive" src="<%- img('photos/cloudcast_500Square.jpg') %>" data-src="holder.js/500x500/auto" alt="CloudCast">
+        </div>
+        <div class="col-md-7 pull-right">
+          <h2 class="featurette-heading">Take the ship into the Neutral Zone <span class="text-muted">Extraordinary.</span></h2>
+          <p class="lead">You're going to be an interesting companion, Mr. Data. I am your worst nightmare! Fate protects fools, little children and ships named Enterprise. Not if I weaken first. You did exactly what you had to do. You considered all your options, you tried every alternative and then you made the hard choice. But the probability of making a six is no greater than that of rolling a seven.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette clearfix">
+        <div class="image-wrapper col-md-5 pull-right">
+          <img class="featurette-image img-responsive" src="<%- img('photos/forestfernscape_500Square.jpg') %>" data-src="holder.js/500x500/auto" alt="Forest Fernscape">
+        </div>
+        <div class="col-md-7 pull-left">
+          <h2 class="featurette-heading">Yesterday I did not know how to eat gagh. <span class="text-muted">Indeed.</span></h2>
+          <p class="lead">You did exactly what you had to do. You considered all your options, you tried every alternative and then you made the hard choice. and attack the Romulans. What? We're not at all alike! Now we know what they mean by 'advanced' tactical training.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	  <div class="modal-content">
+		  <div class="modal-header">
+		    <button type="button" class="btn close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Tasks:</h3>
+		  </div>
+		  <div class="modal-body">
+		    <ul>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Build a simple responsive page that responds to device size. It should include simple navigation and content.  Handle a typical desktop, tablet, and phone.  As the size changes, reconfigure navigation and rearrange content as needed.  For the apprentice badge,  you may use a responsive framework like the one provided in bootstrap.  For journeyman, you will need to hand code the responsiveness using media queries.</li>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Layout your page with multiple columns/regions to demonstrate that you know how to use styling for page layout.  You should have multiple regions aesthetically laid out and styled.  They should reasonably flow as size changes.</li>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Demonstrate the proper use of Semantic HTML.  When you write code, your HTML markup should use the most appropriate tags, tag sequence, attributes and meta data for the document structure.  See Semantic HTML Schlegel</li>
+				</ul>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+		  </div>
+	  </div>
+  </div>
+</div>

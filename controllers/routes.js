@@ -1,9 +1,11 @@
 module.exports = function(app) {
 
-  // app.set('view options', {
-  // 	layout: 'layouts/my-layout'
-  // });
+  app.set('view options', {
+  	layout: 'layouts/my-layout'
+  });
 
+
+  // frontier badges
   app.get('/frontier/apprentice', function(req, res){
     res.render("frontier/apprentice", {
     		person: {
@@ -25,14 +27,17 @@ module.exports = function(app) {
   });
 
 	app.get('/frontier/journeyman', function(req, res){
-    res.render("frontier/journeyman", {
-
-    });
+    res.render("frontier/journeyman", {});
   });
-  app.get('/frontier/journeyman-angular', function(req, res){
-    res.render("frontier/angular-demo", {
 
-    });
+
+	// html5/css3 badges
+	app.get('/html5css3/apprentice', function(req, res){
+    res.render("html5css3/apprentice", {});
+  });
+
+  app.get('/html5css3/apprentice', function(req, res){
+    res.render("html5css3/apprentice", {});
   });
 
   app.get('/', function(req, res){
