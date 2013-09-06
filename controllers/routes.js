@@ -36,8 +36,8 @@ module.exports = function(app) {
     res.render("html5css3/apprentice", {});
   });
 
-  app.get('/html5css3/apprentice', function(req, res){
-    res.render("html5css3/apprentice", {});
+  app.get('/html5css3/journeyman', function(req, res){
+    res.render("html5css3/journeyman", {});
   });
 
   app.get('/', function(req, res){

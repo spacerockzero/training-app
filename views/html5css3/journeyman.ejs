@@ -1,140 +1,117 @@
 <% page = {
-	'title' : 'Frontier Journeyman',
-	'key': 'Frontier Journeyman!!!'
-} %>
-<%- include ../partials/globaljs %>
-<% assets = {
-	'css' : [ 'frontier/journeyman.css' ],
-	'js' : 	[ 'frontier/TheTime.js',
-						'frontier/journeyman.js',
-						'frontier/fullParallel.js' ]
+	'title' : 'Frontier Apprentice',
+	'key': 'Frontier Apprentice'
 } %>
 
-<div id="main" ng-controller="FrontierJourneymanCtrl">
-  <header>
-	  <h1><%- i18n('page_title')%>
-		  <!-- Button to trigger modal -->
-			<button href="#task-modal" role="button" class="pull-right btn btn-primary" data-toggle="modal"><%- i18n('see_tasks') %></button>
+
+
+<% assets = {
+	'css' : ['html5css3/journeyman.css'],
+	'js' : []
+} %>
+
+<div ng-app id="main" >
+	<div class="no-layout">
+		<h1 class="with-tasks">HTML5/CSS3 Journeyman
+			<!-- Button to trigger modal -->
+			<button href="#task-modal" role="button" class="btn-tasks btn btn-primary btn-small" data-toggle="modal">See tasks</button>
 		</h1>
 		<hr/>
-  </header>
 
-	<!-- bootstrap tab nav -->
-	<ul class="nav nav-tabs" id="myTab">
-	  <li >
-	  		<a href="#experiment-i18n">Experiment, i18n</a>
-	  </li>
-	  <li><a href="#angular-directive">Angular Directive</a></li>
-	  <li><a href="#flow-control">Flow Control</a></li>
-	</ul>
+		<section>
+			<div class="container marketing">
 
-	<!-- bootstrap tab content -->
-	<div class="tab-content">
+				<!-- Three columns of text below the carousel -->
+				<div class="articles row">
+					<article class="col-lg-4 clearfix">
+						<img class="image-feature" src="<%- img('photos/jakobThumb200Square.jpg') %>" width="200" >
+						<h2>Not if I weaken first.</h2>
+						<p>They were just sucked into space. The unexpected is our normal routine. How long can two people talk about nothing? Well, I'll say this for him - he's sure of himself. Yes, absolutely, I do indeed concur, wholeheartedly! Wouldn't that bring about chaos? I will obey your orders. I will serve this ship as First Officer. And in an attack against the Enterprise, I will die with this crew. But I will not break my oath of loyalty to Starfleet. I guess it's better to be lucky than good. The game's not big enough unless it scares you a little. Not if I weaken first. and attack the Romulans. You did exactly what you had to do. You considered all your options, you tried every alternative and then you made the hard choice.</p>
+						<a class="action-target btn btn-primary" href="#">View details »</a>
+					</article><!-- /.col-lg-4 -->
+					<article class="col-lg-4 clearfix">
+						<img class="image-feature "src="<%- img('photos/jakobThumb200Square.jpg') %>" width="200" >
+						<h2>Your head is not an artifact!</h2>
+						<p>Fear is the true enemy, the only enemy. Worf, It's better than music. It's jazz. I recommend you don't fire until you're within 40,000 kilometers. Your head is not an artifact! When has justice ever been as simple as a rule book? You enjoyed that. Travel time to the nearest starbase? Captain, why are we out here chasing comets? Earl Grey tea, watercress sandwiches... and Bularian canapés? Are you up for promotion?</p>
+						<a class="action-target btn btn-primary" href="#">View details »</a>
+					</article><!-- /.col-lg-4 -->
+					<article class="col-lg-4 clearfix">
+						<img class="image-feature" src="<%- img('photos/jakobThumb200Square.jpg') %>"  width="200" >
+						<h2>Travel time to the nearest starbase?</h2>
+						<p>Maybe if we felt any human loss as keenly as we feel one of those close to us, human history would be far less bloody. Mr. Worf, you do remember how to fire phasers? In all trust, there is the possibility for betrayal. I think you've let your personal feelings cloud your judgement. Sure. You'd be surprised how far a hug goes with Geordi, or Worf. What's a knock-out like you doing in a computer-generated gin joint like this?</p>
+						<a class="action-target btn btn-primary" href="#">View details »</a>
+					</article><!-- /.col-lg-4 -->
+				</div><!-- /.row -->
 
-	  <!-- Experiment, i18n Requirements -->
-	  <!-- experiments currently don't work in test app, for some reason... -->
-	  <article id="experiment-i18n" class="tab-pane fade">
-	  	<header>
-		  	<h3>i18n phrase inside experiment below:</h3>
-	  	</header>
-	  	<section class="well">
-	  	<% if (feature('internationalGreeting')){ %>
-	  	<p><%- i18n('international_greeting') %></p>
-	  	<% } %>
-	  	</section>
-	  	<span class="badge">Note:</span> Experiments aren't currently working in this training app, but everything is there, just like when it works in a normal app
-	  </article>
+				<!-- START THE FEATURETTES -->
 
-		<!-- Angular Requirement -->
-		<article id="angular-directive" class="tab-pane fade" ng-app="time">
-			<header>
-				<h3>Angular Directive Example</h3>
-			</header>
-			<section class="jumbotron">
-				<div ng-controller="Ctrl2">
-		      Date format: <input ng-model="format"> <hr/>
-		      Current time is: <span my-current-time="format"></span>
-	    	</div>
-			</section>
-		</article>
+				<hr class="featurette-divider clearfix">
 
-		<!-- Flow Control Requirement -->
-		<article id="flow-control" class="tab-pane fade">
-			<header>
-				<h3>Flow Control Example
-				<!-- Button to trigger modal -->
-				<button href="#flow-task-modal" role="button" class="pull-right btn btn-success" data-toggle="modal">What's going on behind the curtains?</button></h3>
-			</header>
-			<hr/>
-			<section id="container" data-control="Masonry" data-config='{"override":true}'></section>
-		</article>
+				<div class="row featurette clearfix">
+					<div class="image-wrapper col-md-5 pull-right">
+						<img class="featurette-image img-responsive" src="<%- img('photos/cityscape_500Square.jpg') %>" data-src="holder.js/500x500/auto" alt="Cityscape">
+					</div>
+					<div class="col-md-7 pull-left">
+						<h2 class="featurette-heading">The unexpected is our normal routine. <span class="text-muted">But of course.</span></h2>
+						<p class="lead">Then maybe you should consider this: if anything happens to them, Starfleet is going to want a full investigation. Flair is what marks the difference between artistry and mere competence. Mr. Crusher, ready a collision course with the Borg ship. I suggest you drop it, Mr. Data. Could someone survive inside a transporter buffer for 75 years? Computer, belay that order.</p>
+					</div>
+				</div>
+
+				<hr class="featurette-divider">
+
+				<div class="row featurette clearfix">
+					<div class="image-wrapper col-md-5 pull-left">
+						<img class="featurette-image img-responsive" src="<%- img('photos/cloudcast_500Square.jpg') %>" data-src="holder.js/500x500/auto" alt="CloudCast">
+					</div>
+					<div class="col-md-7 pull-right">
+						<h2 class="featurette-heading">Take the ship into the Neutral Zone <span class="text-muted">Extraordinary.</span></h2>
+						<p class="lead">You're going to be an interesting companion, Mr. Data. I am your worst nightmare! Fate protects fools, little children and ships named Enterprise. Not if I weaken first. You did exactly what you had to do. You considered all your options, you tried every alternative and then you made the hard choice. But the probability of making a six is no greater than that of rolling a seven.</p>
+					</div>
+				</div>
+
+				<hr class="featurette-divider">
+
+				<div class="row featurette clearfix">
+					<div class="image-wrapper col-md-5 pull-right">
+						<img class="featurette-image img-responsive" src="<%- img('photos/forestfernscape_500Square.jpg') %>" data-src="holder.js/500x500/auto" alt="Forest Fernscape">
+					</div>
+					<div class="col-md-7 pull-left">
+						<h2 class="featurette-heading">Yesterday I did not know how to eat gagh. <span class="text-muted">Indeed.</span></h2>
+						<p class="lead">You did exactly what you had to do. You considered all your options, you tried every alternative and then you made the hard choice. and attack the Romulans. What? We're not at all alike! Now we know what they mean by 'advanced' tactical training.</p>
+					</div>
+				</div>
+
+				<hr class="featurette-divider">
+
+				<!-- /END THE FEATURETTES -->
+
+			</div>
+		</section>
 
 	</div>
-
 </div>
 
-
-<!-- Modals outside of content area, to avoid style inheritance and z-index issues -->
-<!-- Task Modal -->
-<div id="task-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Tasks:</h4>
-      </div>
-      <div class="modal-body">
-        <ul>
-		    	<li>
-		    		<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
-		    		<label>Async Programming:</label>
-		    		Using the "full parallel" control flow pattern, make three simultaneous calls to an api service.
-		    	</li>
-					<li>
-						<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
-						<label>Experiments:</label>
-						Create a feature and wrap it into an experiment.
-						<span class="badge">Note:</span> Experiments aren't currently working in this training app, but everything is there, just like when it works in a normal app</li>
-					<li>
-						<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
-						<label>Localizations:</label>
-						Localize your page(s) by creating a language specific file, moving your strings into it, and adding calls to your page that substitute in the localized strings.
-						<span class="badge">Note:</span> A few newer strings are not yet localized
-					</li>
-					<li>
-						<i class="glyphicon glyphicon-ok btn btn-small btn-success"></i>
-						<label>Angular Directives:</label>
-						Build a simple directive for a new HTML tag called "the-time" that displays the current time; "The time is: xxxx". Use a separate template file.
-						<!-- <span class="badge">Note:</span> Needs to have separate html template file --></li>
+<!-- Modal -->
+<div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">HTML3/CSS3 Journeyman Tasks:</h3>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Build out the responsive page you created for the apprentice badge by adding more pages, improved navigation, and better styling.  You will need to use media queries rather than a framework such as the one found in bootstrap.  </li>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Implement your navigation as a stylized list. Use event handling with minimal wiring.  The current page should be indicated in the list.  You should demonstrate that you can create this navigation by hand rather than use a ui component found in many libraries.</li>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Improve your responsive design to include scaling/loading images and more interesting content flow.  It is acceptable if some features are not available for smaller sizes. For a great example, see Notre Dame's responsive site at: nd.edu</li>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Add a form on one of your pages.  Use CSS to layout the labels and fields.  Use a text box, text area, check box, and a pick list. </li>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Style your pages using CSS, stored in a separate file, using the minimum number of IDs and class attributes in your markup.  Use at least 4 kinds of selectors. Provide an example of using multiple backgrounds.  Include a custom font.   Use opacity, drop shadow, and CSS gradient.  Use a transition, transform or an animation.</li>
+					<li><i class="glyphicon glyphicon-refresh btn btn-warning"></i> Use 12 of the 28 HTML5 features found at: <a href="http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/">http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/</a></li>
 				</ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<!-- Flow Task Modal -->
-<div id="flow-task-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">What's going on behind the curtains?</h4>
-      </div>
-      <div class="modal-body">
-        <ul>
-		    	<li>I make 6 full-parallel async ajax calls to a flickr API, to get the recent public photos for 6 different users I found with interesting photos. </li>
-					<li>These user IDs are taken from an array, and passed into the async ajax function as arguments each time it runs</li>
-					<li>I then build the html for all photos before appending the entire set in one clean operation to the DOM, rather than a ton of noisy, laggy operations inside a loop</li>
-					<li>I then trigger an event in the final content chain callback that the content has loaded. I use this to trigger Masonry to reload and shift the content into a nice mosaic arrangement</li>
-					<li>Check out the XHR requests in your browser dev tools, or refresh a few times to see the image gallery order change. The random-ish order is a side-effect of the full-parallel async nature of the ajax requests I made in this demo.</li>
-				</ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

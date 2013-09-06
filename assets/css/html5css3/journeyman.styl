@@ -1,0 +1,70 @@
+/* vars */
+screen-sm = 768px
+screen-md = 992px
+screen-lg = 1200px
+
+/* build media query strings */
+screen-sm_mq = "(min-width: " + screen-sm + ")"
+screen-md_mq = "(min-width: " + screen-md + ")"
+screen-lg_mq = "(min-width: " + screen-lg + ")"
+
+
+/* styles */
+
+/* Extra small devices (phones, up to 480px) */
+/* No media query since this is the default in Bootstrap 3.0.0 "mobile-first" */
+
+.marketing .col-lg-4
+	text-align: center
+
+.articles article
+	margin-bottom: 10px;
+
+.image-feature
+	margin: 10px;
+
+.featurette-divider
+	clear:both
+
+.articles article .action-target
+	float:none;
+2
+.image-wrapper img
+	margin: 0 auto
+
+article .action-target
+	float: left
+
+article:nth-of-type(odd) .action-target
+	float: right
+
+/* Small devices (tablets, 768px and up) */
+@media screen-sm_mq
+
+	.marketing .col-lg-4
+		text-align: left
+
+	.image-feature
+		float: left
+
+	.articles article:nth-of-type(even) .image-feature
+		float: right
+
+
+
+/* Medium devices (desktops, 992px and up) */
+/*@media screen-md_mq*/
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen-lg_mq
+	.marketing .col-lg-4
+		text-align: center;
+		margin-bottom: 20px;
+
+	.image-wrapper,
+	.image-feature
+		float: none !important
+
+	.articles article .action-target
+		float:none;

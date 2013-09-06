@@ -1,0 +1,57 @@
+/* vars */
+/* build media query strings */
+/* styles */
+/* Extra small devices (phones, up to 480px) */
+/* No media query since this is the default in Bootstrap 3.0.0 "mobile-first" */
+.marketing .col-lg-4 {
+  text-align: center;
+}
+.articles article {
+  margin-bottom: 10px;
+}
+.image-feature {
+  margin: 10px;
+}
+.featurette-divider {
+  clear: both;
+}
+.articles article .action-target {
+  float: none;
+}
+.image-wrapper img {
+  margin: 0 auto;
+}
+article .action-target {
+  float: left;
+}
+article:nth-of-type(odd) .action-target {
+  float: right;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .marketing .col-lg-4 {
+    text-align: left;
+  }
+  .image-feature {
+    float: left;
+  }
+  .articles article:nth-of-type(even) .image-feature {
+    float: right;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+/*@media screen-md_mq*/
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .marketing .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-wrapper,
+  .image-feature {
+    float: none !important;
+  }
+  .articles article .action-target {
+    float: none;
+  }
+}
