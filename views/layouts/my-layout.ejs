@@ -67,8 +67,7 @@
 	<div class="container">
 
 	   <%- body %>
-	  <div class="footer"><br/><hr/>(c) 2013 Jakob Anderson<br/></div>
-
+		<footer><br/><hr/>(c) 2013 Jakob Anderson<br/></footer>
 	  <% if(process.env.NODE_ENV == "production") { %>
 	    <%- js('clientManifest.js') %>
 	  <% } %>
@@ -81,7 +80,7 @@
   </div><!-- /.container -->
   <%- include ../partials/globaljs %>
   <%- include ./partials/inject %>
-  <footer>Copyright 2013 Jakob Anderson</footer>
+
 </body>
 </html>
 
