@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">HTML3/CSS3 Journeyman Tasks:</h3>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li><i class="glyphicon glyphicon-ok btn btn-success"></i> Build out the responsive page you created for the apprentice badge by adding more pages, improved navigation, and better styling.  You will need to use media queries rather than a framework such as the one found in bootstrap.  </li>
+					<li><i class="glyphicon glyphicon-ok btn btn-success"></i> Implement your navigation as a stylized list. Use event handling with minimal wiring.  The current page should be indicated in the list.  You should demonstrate that you can create this navigation by hand rather than use a ui component found in many libraries.</li>
+					<li><i class="glyphicon glyphicon-ok btn btn-success"></i> Improve your responsive design to include scaling/loading images and more interesting content flow.  It is acceptable if some features are not available for smaller sizes. For a great example, see Notre Dame's responsive site at: nd.edu</li>
+					<li><i class="glyphicon glyphicon-ok btn btn-success"></i> Add a form on one of your pages.  Use CSS to layout the labels and fields.  Use a text box, text area, check box, and a pick list. </li>
+					<li><i class="glyphicon glyphicon-ok btn btn-success"></i> Style your pages using CSS, stored in a separate file, using the minimum number of IDs and class attributes in your markup.  Use at least 4 kinds of selectors. Provide an example of using multiple backgrounds.  Include a custom font.   Use opacity, drop shadow, and CSS gradient.  Use a transition, transform or an animation.</li>
+					<li>
+					<% var progress = Math.ceil((12/12)*100);
+						 console.log('progress',progress)
+					%>
+						<i class="glyphicon glyphicon-refresh btn btn-warning"></i>
+						Use 12 of the 28 HTML5 features found at: <a href="http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/">http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/</a>
+						<div class="progress progress-striped active">
+						  <div class="progress-bar"  role="progressbar" aria-valuenow="<%= progress %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= progress %>%"><%= progress %>% Complete
+						    <span class="sr-only"><%= progress %>% Complete</span>
+						  </div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

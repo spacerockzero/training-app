@@ -1,0 +1,71 @@
+<% page = {
+	'title' : 'Frontier Apprentice',
+	'key': 'Frontier Apprentice'
+} %>
+
+
+
+<% assets = {
+	'css' : ['html5css3/journeyman.css'],
+	'js' : []
+} %>
+
+<div ng-app id="main"  data-page-name="page2">
+	<div class="no-layout">
+		<h1 class="with-tasks">HTML5/CSS3 Journeyman
+			<!-- Button to trigger modal -->
+			<button href="#task-modal" role="button" class="btn-tasks btn btn-primary btn-small" data-toggle="modal">See tasks</button>
+		</h1>
+		<hr/>
+		<%- partial('partials/journeyman_nav') %>
+
+		<section>
+			<div class="panel panel-default">
+	<div class="panel-heading">Do the formy thing!</div>
+	<div class="panel-body">
+		<form class="form-horizontal" action="/register" method="POST">
+			<fieldset>
+				<legend>Do something with forms!</legend>
+			  <div class="form-group">
+
+			    <label for="Name" class="col-lg-2 control-label">Name</label>
+			    <div class="col-lg-10">
+			    	<input type="text" name="name" class="form-control" id="name" placeholder="Name" autofocus required value="" pattern="[A-Za-z]{4,10}">
+			    </div>
+
+			    <label for="lifeStory" class="col-lg-2 control-label">LifeStory</label>
+			    <div class="col-lg-10">
+			    	<textarea name="lifeStory" class="form-control" id="lifeStory" placeholder="LifeStory" rows="7" required ></textarea>
+			    </div>
+
+			    <div class="checkbox col-lg-10">
+					  <input name="scaredCheck" type="checkbox" value="">
+					  <label for="scaredCheck">Are you scared of forms?</label>
+					</div>
+
+					<label for="selectifize" class="col-lg-2 control-label">LifeStory</label>
+			    <div class="col-lg-10">
+						<select name="selectifize" class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+					</div>
+
+			    <br/>
+					<div class="col-lg-10">
+				    <button class="btn btn-primary">Do the formy thing!</button>
+			    </div>
+			  </div>
+		  </fieldset>
+		</form>
+	</div>
+</div>
+		</section>
+
+	</div>
+</div>
+
+<%- partial('partials/journeyman_tasks') %>

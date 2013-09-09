@@ -14,6 +14,60 @@ screen-lg_mq = "(min-width: " + screen-lg + ")"
 /* Extra small devices (phones, up to 480px) */
 /* No media query since this is the default in Bootstrap 3.0.0 "mobile-first" */
 
+/* journeyman nav */
+.journeyman-nav li
+	display:inline-block;
+	transition: all 200ms ease-in-out
+	position:relative;
+	top:0;
+	opacity:0.7
+
+.journeyman-nav li a
+	display:block
+	padding: 1em;
+	text-decoration: none;
+
+.journeyman-nav li:hover
+	background: #eee
+	top: -5px;
+	opacity: 1;
+	transition: all 200ms ease-in-out
+
+.journeyman-nav li:hover,
+.journeyman-nav li.active
+	box-shadow: 0 5px 5px rgba(0,0,0,0.4)
+
+.journeyman-nav li.active
+	background: #428bca;
+
+.journeyman-nav li.active a
+	color: #ffffff;
+
+.journeyman-nav li a[href*="2"]
+	color:#000
+
+/* responsive helper classes */
+.img-responsive
+	display: block;
+	height: auto;
+	max-width: 100%;
+/* end */
+
+/* page 3 thor bg content */
+.thor
+	display:block
+	width:100%
+	height:800px
+	background: url('photos/thor.png') 50%, url('photos/haystacksunset.jpg') 200%
+
+/* end */
+
+.featurette .featurette-image
+	float:left
+
+.featurette:nth-of-type(even) .image-wrapper
+	float:right
+
 .marketing .col-lg-4
 	text-align: center
 
@@ -24,11 +78,11 @@ screen-lg_mq = "(min-width: " + screen-lg + ")"
 	margin: 10px;
 
 .featurette-divider
-	clear:both
+	clear:both;
 
 .articles article .action-target
 	float:none;
-2
+
 .image-wrapper img
 	margin: 0 auto
 

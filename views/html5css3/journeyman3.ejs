@@ -1,0 +1,33 @@
+<% page = {
+	'title' : 'Frontier Apprentice',
+	'key': 'Frontier Apprentice'
+} %>
+
+
+
+<% assets = {
+	'css' : ['html5css3/journeyman.css'],
+	'js' : []
+} %>
+
+<div ng-app id="main" data-page-name="page3" >
+	<div class="no-layout">
+		<h1 class="with-tasks">HTML5/CSS3 Journeyman
+			<!-- Button to trigger modal -->
+			<button href=#task-modal role=button class="btn-tasks btn btn-primary btn-small" data-toggle=modal>See tasks</button>
+		</h1>
+		<hr/>
+		<%- partial('partials/journeyman_nav') %>
+
+		<section>
+			<h2 contenteditable="true">By the power of Mjolnir!</h2>
+			<figure>
+				<div class="thor"></div>
+				<figcaption>This is <small>Thor</small> the almighty of Asgaard!!!</figcaption>
+			</figure>
+		</section>
+
+	</div>
+</div>
+
+<%- partial('partials/journeyman_tasks') %>

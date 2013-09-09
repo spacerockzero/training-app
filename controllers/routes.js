@@ -39,6 +39,12 @@ module.exports = function(app) {
   app.get('/html5css3/journeyman', function(req, res){
     res.render("html5css3/journeyman", {});
   });
+  app.get('/html5css3/journeyman2', function(req, res){
+    res.render("html5css3/journeyman2", {});
+  });
+  app.get('/html5css3/journeyman3', function(req, res){
+    res.render("html5css3/journeyman3", {});
+  });
 
   app.get('/', function(req, res){
     res.render("index", {});
