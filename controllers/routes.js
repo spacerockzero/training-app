@@ -46,6 +46,14 @@ module.exports = function(app) {
     res.render("html5css3/journeyman3", {});
   });
 
+  // javascript badges
+  app.get('/javascript/apprentice', function(req, res){
+    res.render("javascript/apprentice", {});
+  });
+  app.get('/javascript/journeyman', function(req, res){
+    res.render("javascript/journeyman", {});
+  });
+
   app.get('/', function(req, res){
     res.render("index", {});
   });
