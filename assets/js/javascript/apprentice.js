@@ -1,3 +1,18 @@
+$(document).ready(function(){
+	// handle tab interface content
+	$('#myTab a').eq(1).tab('show'); // Select 2nd tab
+	$('#myTab a').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	});
+});
+
+
+
+// skills code
+
+// Task 1:
+// main javascript module pattern
 var thingamabob = (function () {
 
 	var me = {},
@@ -21,6 +36,7 @@ var thingamabob = (function () {
 
 }());
 
+// use the module object
 var elements = {
 			privateDataElement: document.getElementById('private-data'),
 			privateMethodElement: document.getElementById('private-function'),
@@ -59,3 +75,32 @@ putPrivateData();
 putPrivateMethod();
 putPublicInterface();
 
+
+// Task 2
+
+var personData = {
+	name: '',
+	lifeStory: '',
+	getName: function(){
+		return $('#name').val();
+	},
+	getLifeStory: function(){
+		return $('#lifeStory').val();
+	},
+	getNewPerson: function(){
+		personData.name = personData.getName();
+		personData.lifeStory = personData.getLifeStory();
+	},
+	logPerson: function(){
+		console.log( "NAME:",personData.name,"LIFESTORY:",personData.lifeStory );
+	}
+}
+
+// form-handling
+$(document).ready(function(){
+	$('#form-submit').on('click', function(e){
+		e.preventDefault();
+		personData.getNewPerson();
+		personData.logPerson();
+	});
+});

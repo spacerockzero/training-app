@@ -18,12 +18,55 @@
 		</h1>
 		<hr/>
 
-		<section>
-		<div>Private data: <span id="private-data"></span></div>
-		<div>Private function: <span id="private-function"></span></div>
-		<div>Public interface: <span id="public-interface"></span></div>
 
+	<!-- bootstrap tab nav -->
+	<ul class="nav nav-tabs" id="myTab">
+	  <li><a href="#module-pattern">Module Pattern</a></li>
+	  <li><a href="#form-data-binding">Form data binding</a></li>
+	</ul>
+
+	<!-- bootstrap tab content -->
+	<div class="tab-content">
+
+		<section id="module-pattern" class="tab-pane fade">
+		<h2>Task 1</h2>
+			<div>Private data: <span id="private-data"></span></div>
+			<div>Private function: <span id="private-function"></span></div>
+			<div>Public interface: <span id="public-interface"></span></div>
 		</section>
+
+		<section id="form-data-binding" class="tab-pane fade">
+			<h2>Task 2</h2>
+			<div class="panel panel-default">
+	<div class="panel-heading">Do the formy thing!</div>
+	<div class="panel-body">
+		<form class="form-horizontal" action="/register" method="POST">
+			<fieldset>
+				<legend>Do something with forms!</legend>
+			  <div class="form-group">
+
+			    <label for="Name" class="col-lg-2 control-label">Name</label>
+			    <div class="col-lg-10">
+			    	<input type="text" name="name" class="form-control" id="name" placeholder="Name" autofocus required value="" pattern="[A-Za-z]{4,10}">
+			    </div>
+
+			    <label for="lifeStory" class="col-lg-2 control-label">LifeStory</label>
+			    <div class="col-lg-10">
+			    	<textarea name="lifeStory" class="form-control" id="lifeStory" placeholder="LifeStory" rows="7" required ></textarea>
+			    </div>
+
+			    <br/>
+					<div class="col-lg-10">
+				    <button id="form-submit" class="btn btn-primary">Do the formy thing!</button>
+			    </div>
+			  </div>
+		  </fieldset>
+		</form>
+	</div>
+</div>
+		</section>
+
+	</div>
 
 	</div>
 </div>
