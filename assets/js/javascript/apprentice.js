@@ -40,7 +40,9 @@ var thingamabob = (function () {
 var elements = {
 			privateDataElement: document.getElementById('private-data'),
 			privateMethodElement: document.getElementById('private-function'),
-			publicInterfaceElement: document.getElementById('public-interface')
+			publicInterfaceElement: document.getElementById('public-interface'),
+			playNameElement: document.getElementById('play-name'),
+			playLifeStoryElement: document.getElementById('play-life-story')
 		}
 		getters = {
 			getPrivateData: function(){
@@ -62,6 +64,17 @@ function putPrivateData(){
 	elements.privateDataElement.textContent = getters.getPrivateData();
 }
 function putPrivateMethod(){
+	try {
+		if (!privateMethod || typeof privateMethod != 'function'){
+			throw 'privateMethod does not exist or not accessible from this scope';
+		}
+	}
+	catch (err){
+		console.log('privateMethod ERROR:',err)
+		if (typeof privateMethod != 'function'){
+			throw 'privateMethod ERROR: privateMethod does not exist or not accessible from this scope';
+		}
+	}
 	// console.log('getters.getPrivateMethod()',getters.getPrivateMethod())
 	// elements.privateMethodElement.textContent = getters.getPrivateMethod();
 }
@@ -93,14 +106,19 @@ var personData = {
 	},
 	logPerson: function(){
 		console.log( "NAME:",personData.name,"LIFESTORY:",personData.lifeStory );
+	},
+	putNewPerson: function(){
+		elements.playNameElement.textContent = personData.name;
+		elements.playLifeStoryElement.textContent = personData.lifeStory;
 	}
 }
 
 // form-handling
 $(document).ready(function(){
-	$('#form-submit').on('click', function(e){
+	$('input,textarea').on('keyup', function(e){
 		e.preventDefault();
 		personData.getNewPerson();
 		personData.logPerson();
+		personData.putNewPerson();
 	});
 });
