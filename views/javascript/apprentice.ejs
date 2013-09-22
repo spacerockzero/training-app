@@ -40,9 +40,10 @@
 			<div class="panel panel-default">
 	<div class="panel-heading">Do the formy thing!</div>
 	<div class="panel-body">
+		<div id="bad-words-alert" class="alert alert-warning" style="display:none">Please remove the inappropriate word(s) from the form inputs and continue</div>
 		<form class="form-horizontal" action="/register" method="POST">
 			<fieldset>
-				<legend>Do something with forms!</legend>
+				<legend>Do something with forms! (Hint try: stinky, gross, messy, nasty, smelly)</legend>
 			  <div class="form-group">
 
 			    <label for="Name" class="col-lg-2 control-label">Name</label>
@@ -53,6 +54,11 @@
 			    <label for="lifeStory" class="col-lg-2 control-label">LifeStory</label>
 			    <div class="col-lg-10">
 			    	<textarea name="lifeStory" class="form-control" id="lifeStory" placeholder="LifeStory" rows="7" required ></textarea>
+			    </div>
+
+			    <label for="nickName" class="col-lg-2 control-label">nickName</label>
+			    <div class="col-lg-10">
+			    	<textarea name="nickName" class="form-control" id="nickName" placeholder="nickName" rows="7" required ></textarea>
 			    </div>
 
 			    <!-- <br/>
@@ -69,6 +75,7 @@
 			<div>Your object:
 				<div>Name: <span id="play-name"></span></div>
 				<div>Lifestory: <span id="play-life-story"></span></div>
+				<div>NickName: <span id="play-nick-name"></span></div>
 			</div>
 		</div>
 	</div>
