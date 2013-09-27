@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	// handle tab interface content
-	$('#myTab a').eq(1).tab('show'); // Select 2nd tab
+	$('#myTab a').eq(0).tab('show'); // Select 2nd tab
 	$('#myTab a').click(function (e) {
 	  e.preventDefault();
 	  $(this).tab('show');
