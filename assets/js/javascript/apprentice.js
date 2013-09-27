@@ -106,14 +106,14 @@ var personData = {
 	},
 	getNewPerson: function(){
 		if (!personData.filterNickName(personData.getNickName()) && !personData.filterName(personData.getName()) && !personData.filterText(personData.getLifeStory())){
-			$('#bad-words-alert').hide()
+			$('#bad-words-alert').slideUp()
 			console.log('all words used check out');
 			personData.name = personData.getName();
 			personData.lifeStory = personData.getLifeStory();
 			personData.nickName = personData.getNickName();
 		}
 		else {
-			$('#bad-words-alert').show()
+			$('#bad-words-alert').slideDown()
 			console.log('there was an inappropriate word in one or more input fields, please correct it.')
 		}
 	},
