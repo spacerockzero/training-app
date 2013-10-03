@@ -6,8 +6,8 @@
 
 
 <% assets = {
-	'css' : ['javascript/apprentice.css'],
-	'js' : ['javascript/apprentice.js']
+	'css' : [],
+	'js' : ['javascript/journeyman.js']
 } %>
 
 <div ng-app id="main" data-page-name="home">
@@ -18,11 +18,51 @@
 		</h1>
 		<hr/>
 
-		<section>
+		<section class="clearfix">
+			<div class="col-md-8">
+				<div class="panel panel-default" data-control="formyThing">
+					<div class="panel-heading">Do the formy thing!</div>
+					<div class="panel-body">
+						<form class="form-horizontal" action="/register" method="POST">
+							<fieldset>
+								<legend>Do something with forms! </legend>
+							  <div class="form-group">
+
+							    <label for="Name" class="col-lg-2 control-label">Name</label>
+							    <div class="col-lg-10">
+							    	<input type="text" id="name" name="name" class="form-control" placeholder="Name" autofocus required value="" pattern="[A-Za-z]{4,10}">
+							    </div>
+
+							    <label for="secret" class="col-lg-2 control-label">Secret Word</label>
+							    <div class="col-lg-10">
+							    	<input name="secret" id="secret" class="form-control" placeholder="Secret" required >
+							    </div>
+
+							    <br/>
+									<div class="col-lg-10">
+								    <button id="form-submit" class="btn btn-primary">Process!</button>
+							    </div>
+							  </div>
+						  </fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Processing results:</div>
+					<div class="panel-body">
+						<div>Your object:
+							<div>Name: <span id="play-name"></span></div>
+							<div>Secret Word: <span id="play-secret-word"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</section>
 
 	</div>
 </div>
-
 <%- partial('partials/journeyman_tasks') %>
