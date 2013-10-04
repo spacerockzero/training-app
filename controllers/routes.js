@@ -30,6 +30,23 @@ module.exports = function(app) {
     res.render("frontier/journeyman", {});
   });
 
+	function processForm( req, callback ){
+		console.log('req.body',req.body);
+		var procObj = {
+			name: req.body.name + '_server-processed',
+			secret: req.body.secret + '_server-processed'
+		}
+		callback(procObj);
+	}
+
+  app.post('/processform', function(req, res){
+  	processForm(req, function(formObj){
+	  	res.send({
+	  		formObj: formObj
+	  	});
+  	})
+  });
+
 
 	// html5/css3 badges
 	app.get('/html5css3/apprentice', function(req, res){

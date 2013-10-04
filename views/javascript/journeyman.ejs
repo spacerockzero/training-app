@@ -20,10 +20,10 @@
 
 		<section class="clearfix">
 			<div class="col-md-8">
-				<div class="panel panel-default" data-control="formyThing">
+				<div class="panel panel-default" >
 					<div class="panel-heading">Do the formy thing!</div>
 					<div class="panel-body">
-						<form class="form-horizontal" action="/register" method="POST">
+						<form id="formy" class="form-horizontal" data-control="formyThing">
 							<fieldset>
 								<legend>Do something with forms! </legend>
 							  <div class="form-group">
@@ -33,14 +33,14 @@
 							    	<input type="text" id="name" name="name" class="form-control" placeholder="Name" autofocus required value="" pattern="[A-Za-z]{4,10}">
 							    </div>
 
-							    <label for="secret" class="col-lg-2 control-label">Secret Word</label>
+							    <label for="secret" class="col-lg-2 control-label">Secret</label>
 							    <div class="col-lg-10">
 							    	<input name="secret" id="secret" class="form-control" placeholder="Secret" required >
 							    </div>
 
 							    <br/>
 									<div class="col-lg-10">
-								    <button id="form-submit" class="btn btn-primary">Process!</button>
+								    <button id="submit" type="submit" class="btn btn-primary">Process!</button>
 							    </div>
 							  </div>
 						  </fieldset>
@@ -53,9 +53,9 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Processing results:</div>
 					<div class="panel-body">
-						<div>Your object:
-							<div>Name: <span id="play-name"></span></div>
-							<div>Secret Word: <span id="play-secret-word"></span></div>
+						<div id="formy-playback">
+							<div><strong>Name:</strong> <br/><span id="playback-name"></span></div>
+							<div><strong>Secret Word:</strong> <br/><span id="playback-secret"></span></div>
 						</div>
 					</div>
 				</div>
