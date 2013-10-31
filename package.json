@@ -5,9 +5,9 @@
   "main": "./app.js",
   "dependencies": {
     "async": ">= 0.1.12",
-    "shared-ui": "git+https://github.com/fs-webdev/shared-ui.git",
-    "woodruff": "git+https://github.com/fs-webdev/woodruff.git",
-    "frontier-build-tools": "git+https://github.com/fs-webdev/frontier-build-tools.git",
+    "woodruff": "git+https://github.com/fs-webdev/woodruff.git#1.5.5",
+    "frontier-build-tools": "git+https://github.com/fs-webdev/frontier-build-tools.git#HeaderFooterMerge",
+    "photos-components": "git+https://github.com/fs-webdev/photos-components.git",
     "startup": "~0.1.12"
   },
   "devDependencies": {
