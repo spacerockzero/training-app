@@ -1,0 +1,68 @@
+<% page = {
+	'title' : 'JavaScript Apprentice',
+	'key': 'JavaScript Apprentice'
+} %>
+
+
+
+<% assets = {
+	'css' : [],
+	'js' : ['javascript/journeyman.js']
+} %>
+
+<div ng-app id="main" data-page-name="home">
+	<div class="no-layout">
+		<h1 class="with-tasks">JavaScript Journeyman
+			<!-- Button to trigger modal -->
+			<button href="#task-modal" role="button" class="btn-tasks btn btn-primary btn-small" data-toggle="modal">See tasks</button>
+		</h1>
+		<hr/>
+
+		<section class="clearfix">
+			<div class="col-md-8">
+				<div class="panel panel-default" >
+					<div class="panel-heading">Do the formy thing!</div>
+					<div class="panel-body">
+						<form id="formy" class="form-horizontal" data-control="formyThing">
+							<fieldset>
+								<legend>Do something with forms! </legend>
+							  <div class="form-group">
+
+							    <label for="Name" class="col-lg-2 control-label">Name</label>
+							    <div class="col-lg-10">
+							    	<input type="text" id="name" name="name" class="form-control" placeholder="Name" autofocus required value="" pattern="[A-Za-z]{4,10}">
+							    </div>
+
+							    <label for="secret" class="col-lg-2 control-label">Secret</label>
+							    <div class="col-lg-10">
+							    	<input name="secret" id="secret" class="form-control" placeholder="Secret" required >
+							    </div>
+
+							    <br/>
+									<div class="col-lg-10">
+								    <button id="submit" type="submit" class="btn btn-primary">Process!</button>
+							    </div>
+							  </div>
+						  </fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Processing results:</div>
+					<div class="panel-body">
+						<div id="formy-playback">
+							<div><strong>Name:</strong> <br/><span id="playback-name"></span></div>
+							<div><strong>Secret Word:</strong> <br/><span id="playback-secret"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+</div>
+<%- partial('partials/journeyman_tasks') %>

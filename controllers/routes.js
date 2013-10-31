@@ -71,6 +71,14 @@ module.exports = function(app) {
     res.render("javascript/journeyman", {});
   });
 
+  // testing badges
+  app.get('/testing/apprentice', function(req, res){
+    res.render("testing/apprentice", {});
+  });
+  app.get('/testing/journeyman', function(req, res){
+    res.render("testing/journeyman", {});
+  });
+
   app.get('/', function(req, res){
     res.render("index", {});
   });
